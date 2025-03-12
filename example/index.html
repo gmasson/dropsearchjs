@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DropSearch Example</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    /* Card hover effect */
+    .product-card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    
+    /* Search input styling */
+    .search-container {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6c757d;
+    }
+    
+    .search-input {
+      padding-left: 2.5rem;
+    }
+    
+    /* Tag styling */
+    .product-tag {
+      display: inline-block;
+      background-color: #f8f9fa;
+      border-radius: 50px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      color: #6c757d;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 767.98px) {
+      .product-card {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <!-- Page Header -->
+    <header class="text-center mb-5">
+      <h1 class="display-4">Product Catalog</h1>
+      <p class="lead text-muted">Find the perfect item with our easy search</p>
+    </header>
+    
+    <!-- Search Input with dropsearch-input attribute -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-6">
+        <div class="search-container">
+          <!-- Search icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+          <!-- Search input with dropsearch-input attribute -->
+          <input 
+            type="text" 
+            class="form-control form-control-lg search-input" 
+            placeholder="Search products..." 
+            dropsearch-input="products">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Product Grid with items containing dropsearch attribute -->
+    <div class="row">
+      <!-- Product 1 - Electronics category -->
+      <div class="col-md-4 mb-4" dropsearch="products" dropsearch-tags="electronics,gadgets,tech">
+        <div class="card h-100 product-card">
+          <div class="card-body">
+            <h5 class="card-title">Wireless Headphones</h5>
+            <p class="card-text">Premium noise cancelling headphones with 30-hour battery life.</p>
+            <div class="mb-2">
+              <span class="product-tag">electronics</span>
+              <span class="product-tag">gadgets</span>
+              <span class="product-tag">tech</span>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">$129.99</h6>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product 2 - Clothing category -->
+      <div class="col-md-4 mb-4" dropsearch="products" dropsearch-tags="clothing,fashion,casual">
+        <div class="card h-100 product-card">
+          <div class="card-body">
+            <h5 class="card-title">Denim Jacket</h5>
+            <p class="card-text">Classic blue denim jacket with comfortable fit and durable fabric.</p>
+            <div class="mb-2">
+              <span class="product-tag">clothing</span>
+              <span class="product-tag">fashion</span>
+              <span class="product-tag">casual</span>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">$59.99</h6>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product 3 - Home category -->
+      <div class="col-md-4 mb-4" dropsearch="products" dropsearch-tags="home,kitchen,appliances">
+        <div class="card h-100 product-card">
+          <div class="card-body">
+            <h5 class="card-title">Smart Coffee Maker</h5>
+            <p class="card-text">Programmable coffee maker with smartphone control and scheduling.</p>
+            <div class="mb-2">
+              <span class="product-tag">home</span>
+              <span class="product-tag">kitchen</span>
+              <span class="product-tag">appliances</span>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">$89.95</h6>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product 4 - Books category -->
+      <div class="col-md-4 mb-4" dropsearch="products" dropsearch-tags="books,fiction,bestseller">
+        <div class="card h-100 product-card">
+          <div class="card-body">
+            <h5 class="card-title">The Midnight Library</h5>
+            <p class="card-text">A novel about regret, hope, and transformation by Matt Haig.</p>
+            <div class="mb-2">
+              <span class="product-tag">books</span>
+              <span class="product-tag">fiction</span>
+              <span class="product-tag">bestseller</span>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">$14.99</h6>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product 5 - Sports category -->
+      <div class="col-md-4 mb-4" dropsearch="products" dropsearch-tags="sports,fitness,outdoor">
+        <div class="card h-100 product-card">
+          <div class="card-body">
+            <h5 class="card-title">Yoga Mat</h5>
+            <p class="card-text">Non-slip eco-friendly yoga mat with carrying strap.</p>
+            <div class="mb-2">
+              <span class="product-tag">sports</span>
+              <span class="product-tag">fitness</span>
+              <span class="product-tag">outdoor</span>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">$24.50</h6>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product 6 - Electronics category -->
+      <div class="col-md-4 mb-4" dropsearch="products" dropsearch-tags="electronics,gadgets,photo">
+        <div class="card h-100 product-card">
+          <div class="card-body">
+            <h5 class="card-title">Digital Camera</h5>
+            <p class="card-text">Compact digital camera with 20MP sensor and 4K video recording.</p>
+            <div class="mb-2">
+              <span class="product-tag">electronics</span>
+              <span class="product-tag">gadgets</span>
+              <span class="product-tag">photo</span>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">$349.00</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- No Results Message - Initially hidden -->
+    <div class="text-center py-5 d-none" id="no-results">
+      <h3 class="text-muted">No products found</h3>
+      <p>Try adjusting your search criteria</p>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-5 text-center text-muted">
+      <p>DropSearch Example © 2025</p>
+    </footer>
+  </div>
+
+  <script src="../dropsearch.js"></script>
+
+</body>
+</html>
